@@ -6,13 +6,12 @@
 /*   By: lgirerd <lgirerd@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 13:49:46 by lgirerd           #+#    #+#             */
-/*   Updated: 2024/12/17 14:00:08 by lgirerd          ###   ########lyon.fr   */
+/*   Updated: 2024/12/18 00:14:41 by lgirerd          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/libft.h"
 #include <stdlib.h>
-
 
 char	*ft_itoa_unsigned(unsigned int n)
 {

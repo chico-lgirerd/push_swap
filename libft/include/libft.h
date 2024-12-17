@@ -6,7 +6,7 @@
 /*   By: lgirerd <lgirerd@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 16:19:38 by lgirerd           #+#    #+#             */
-/*   Updated: 2024/12/12 16:00:49 by lgirerd          ###   ########lyon.fr   */
+/*   Updated: 2024/12/17 13:58:31 by lgirerd          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 # define LIBFT_H
 
 # include <stddef.h>
+#include <stdarg.h>
+
 
 /* --- LINKED LISTS ---*/
 
@@ -82,4 +84,15 @@ int		ft_isascii(int c);
 int		ft_isdigit(int c);
 int		ft_isprint(int c);
 
+/* --- PRINTF --- */
+int		ft_printstr(char *s);
+int		ft_printnumber(int n);
+int		ft_printptr(unsigned long long ptr);
+int		ft_printchar(int c);
+int		ft_printhex(unsigned int n, const char format);
+int		ft_printf(const char *s, ...);
+int		ft_handler(va_list args, const char format);
+void	ft_putchar(int c);
+int		ft_printunsigned(unsigned int n);
+int		num_len(int nb);
 #endif

@@ -6,7 +6,7 @@
 #    By: lgirerd <lgirerd@student.42lyon.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/05 13:41:01 by lgirerd           #+#    #+#              #
-#    Updated: 2024/12/16 17:29:14 by lgirerd          ###   ########lyon.fr    #
+#    Updated: 2024/12/17 13:57:04 by lgirerd          ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -71,6 +71,14 @@ STRING_SRCS = 	ft_split.c \
 				ft_strtrim.c \
 				ft_substr.c
 
+PRINTF_DIR = printf/
+PRINTF_SRCS = 	ft_printf.c \
+				ft_subprints.c \
+				ft_printfutils.c \
+				ft_printfutils2.c \
+				ft_printhex.c \
+				ft_printptr.c 
+
 ############################# DIRECTORIES ##############################
 
 SRCS_DIR = srcs/
@@ -79,7 +87,8 @@ SRCS =	$(addprefix $(SRCS_DIR)$(CONV_DIR), $(CONV_SRCS)) \
 		$(addprefix $(SRCS_DIR)$(IS_DIR), $(IS_SRCS)) \
 		$(addprefix $(SRCS_DIR)$(LINKLIST_DIR), $(LINKLIST_SRCS)) \
 		$(addprefix $(SRCS_DIR)$(MEMORY_DIR), $(MEMORY_SRCS)) \
-		$(addprefix $(SRCS_DIR)$(STRING_DIR), $(STRING_SRCS)) 
+		$(addprefix $(SRCS_DIR)$(STRING_DIR), $(STRING_SRCS)) \
+		$(addprefix $(SRCS_DIR)$(PRINTF_DIR), $(PRINTF_SRCS))
 
 OBJS_DIR = .objs/
 
@@ -100,6 +109,7 @@ $(OBJS_DIR)%.o: $(SRCS_DIR)%.c
 	@mkdir -p $(OBJS_DIR)$(LINKLIST_DIR)
 	@mkdir -p $(OBJS_DIR)$(MEMORY_DIR)
 	@mkdir -p $(OBJS_DIR)$(STRING_DIR)
+	@mkdir -p $(OBJS_DIR)$(PRINTF_DIR)
 	@echo "Compiling $<"; $(CC) $(CFLAGS) -MMD -c $< -o $@
 
 clean :

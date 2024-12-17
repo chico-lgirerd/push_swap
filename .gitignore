@@ -3,3 +3,7 @@ checker_linux
 
 # Subjects
 *.pdf
+
+# Misc
+*.out
+*.o

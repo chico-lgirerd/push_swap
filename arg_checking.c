@@ -6,11 +6,9 @@
 /*   By: lgirerd <lgirerd@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/17 13:40:46 by lgirerd           #+#    #+#             */
-/*   Updated: 2024/12/17 13:49:35 by lgirerd          ###   ########lyon.fr   */
+/*   Updated: 2024/12/17 14:16:05 by lgirerd          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <stddef.h>
 
 int	ft_duplicates(int *tab)
 {
@@ -18,12 +16,12 @@ int	ft_duplicates(int *tab)
 	int	j;
 
 	i = 0;
-	while (tab[i] != NULL)
+	while (tab[i] != '\0')
 	{
 		j = 0;
-		while (tab[j] != NULL)
+		while (tab[j] != '\0')
 		{
-			if (tab[i] == tab[j])
+			if (tab[i] == tab[j] && (i != j))
 				return (1);
 			j++;
 		}
@@ -31,5 +29,3 @@ int	ft_duplicates(int *tab)
 	}
 	return (0);
 }
-
-

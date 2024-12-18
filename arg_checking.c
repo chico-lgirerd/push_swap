@@ -6,7 +6,7 @@
 /*   By: lgirerd <lgirerd@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/17 13:40:46 by lgirerd           #+#    #+#             */
-/*   Updated: 2024/12/18 13:39:24 by lgirerd          ###   ########lyon.fr   */
+/*   Updated: 2024/12/18 16:36:38 by lgirerd          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,30 +16,36 @@
 #include <limits.h>
 #include <stdio.h>
 
+int	ft_isdigit(int c)
+{
+	return (c >= 48 && c <= 57);
+}
+
 int	is_valid_int(const char *str)
 {
-	int     i;
-	int     sign;
-	long    result;
-	int     digit_count;
+	int		i;
+	int		sign;
+	long	result;
+	int		digit_count;
 
 	i = 0;
 	sign = 1;
 	result = 0;
 	digit_count = 0;
-    while (str[++i] == '-')
-        sign = -1;
-	while (str[i])
+	if (str[i] == '-')
+		sign = -1;
+	if (str[i] == '-' || str[i] == '+')
+		i++;
+	while (str[i++])
 	{
-		if (ft_isdigit(str[i]) != 1)
+		if (ft_isdigit(str[i - 1]) != 1)
 			return (0);
-		result = result * 10 + (str[i] - '0');
+		result = result * 10 + (str[i - 1] - '0');
 		digit_count++;
 		if (sign == 1 && result > INT_MAX)
 			return (0);
 		if (sign == -1 && result > (long)INT_MAX + 1)
 			return (0);
-		i++;
 	}
 	return (digit_count > 0);
 }
@@ -77,7 +83,7 @@ int	*ft_parse_int(int argc, char **argv)
 	i = 1;
 	while (i < argc)
 	{
-		if ((atoi(argv[i]) >= INT_MIN && atoi(argv[i]) <= INT_MAX))
+		if (is_valid_int(argv[i]))
 			tab[i - 1] = atoi(argv[i]);
 		else
 			return (free(tab), NULL);
@@ -88,15 +94,16 @@ int	*ft_parse_int(int argc, char **argv)
 
 int	main(int argc, char **argv)
 {
-	int *tab;
+	int	*tab;
+	int	i;
 
+	i = 0;
 	tab = ft_parse_int(argc, argv);
 	if (tab == NULL)
 	{
 		write(1, "Error\n", 6);
 		return (1);
 	}
-	int i = 0;
 	while (tab[i])
 	{
 		printf("%d\n", tab[i]);
@@ -105,9 +112,3 @@ int	main(int argc, char **argv)
 	free(tab);
 	return (0);
 }
-
-// int	main(void)
-// {
-// 	printf("%d\n", atoi("aua"));
-// 	return (0);
-// }

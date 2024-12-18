@@ -6,7 +6,7 @@
 /*   By: lgirerd <lgirerd@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/17 13:40:46 by lgirerd           #+#    #+#             */
-/*   Updated: 2024/12/18 16:36:38 by lgirerd          ###   ########lyon.fr   */
+/*   Updated: 2024/12/18 17:02:53 by lgirerd          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,18 +50,18 @@ int	is_valid_int(const char *str)
 	return (digit_count > 0);
 }
 
-int	ft_duplicates(int *tab)
+int	ft_duplicates(int *tab, int size)
 {
 	int	i;
 	int	j;
 
 	i = 0;
-	while (tab[i] != '\0')
+	while (i < size)
 	{
 		j = 0;
-		while (tab[j] != '\0')
+		while (j < size)
 		{
-			if (tab[i] == tab[j] && (i != j))
+			if (tab[i] == tab[j] && i != j)
 				return (1);
 			j++;
 		}
@@ -99,12 +99,12 @@ int	main(int argc, char **argv)
 
 	i = 0;
 	tab = ft_parse_int(argc, argv);
-	if (tab == NULL)
+	if (tab == NULL || ft_duplicates(tab, argc - 1))
 	{
 		write(1, "Error\n", 6);
 		return (1);
 	}
-	while (tab[i])
+	while (i < argc - 1)
 	{
 		printf("%d\n", tab[i]);
 		i++;

@@ -6,7 +6,7 @@
 /*   By: lgirerd <lgirerd@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/17 13:40:46 by lgirerd           #+#    #+#             */
-/*   Updated: 2024/12/18 00:22:09 by lgirerd          ###   ########lyon.fr   */
+/*   Updated: 2024/12/18 13:39:24 by lgirerd          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,34 @@
 #include <stdlib.h>
 #include <limits.h>
 #include <stdio.h>
+
+int	is_valid_int(const char *str)
+{
+	int     i;
+	int     sign;
+	long    result;
+	int     digit_count;
+
+	i = 0;
+	sign = 1;
+	result = 0;
+	digit_count = 0;
+    while (str[++i] == '-')
+        sign = -1;
+	while (str[i])
+	{
+		if (ft_isdigit(str[i]) != 1)
+			return (0);
+		result = result * 10 + (str[i] - '0');
+		digit_count++;
+		if (sign == 1 && result > INT_MAX)
+			return (0);
+		if (sign == -1 && result > (long)INT_MAX + 1)
+			return (0);
+		i++;
+	}
+	return (digit_count > 0);
+}
 
 int	ft_duplicates(int *tab)
 {

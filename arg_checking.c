@@ -6,7 +6,7 @@
 /*   By: lgirerd <lgirerd@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/17 13:40:46 by lgirerd           #+#    #+#             */
-/*   Updated: 2024/12/18 17:02:53 by lgirerd          ###   ########lyon.fr   */
+/*   Updated: 2024/12/19 16:26:58 by lgirerd          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 #include <unistd.h>
 #include <stdlib.h>
 #include <limits.h>
-#include <stdio.h>
 
 int	ft_isdigit(int c)
 {
@@ -90,25 +89,4 @@ int	*ft_parse_int(int argc, char **argv)
 		i++;
 	}
 	return (tab);
-}
-
-int	main(int argc, char **argv)
-{
-	int	*tab;
-	int	i;
-
-	i = 0;
-	tab = ft_parse_int(argc, argv);
-	if (tab == NULL || ft_duplicates(tab, argc - 1))
-	{
-		write(1, "Error\n", 6);
-		return (1);
-	}
-	while (i < argc - 1)
-	{
-		printf("%d\n", tab[i]);
-		i++;
-	}
-	free(tab);
-	return (0);
 }

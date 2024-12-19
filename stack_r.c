@@ -6,7 +6,7 @@
 /*   By: lgirerd <lgirerd@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/19 16:32:10 by lgirerd           #+#    #+#             */
-/*   Updated: 2024/12/19 17:03:26 by lgirerd          ###   ########lyon.fr   */
+/*   Updated: 2024/12/19 17:05:07 by lgirerd          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,4 +52,21 @@ void	ra(t_stack *a)
 		return ;
 	rotate_up(a);
 	write(1, "ra\n", 3);
+}
+
+void	rb(t_stack *b)
+{
+	if (b->top < 0)
+		return ;
+	rotate_up(b);
+	write(1, "rb\n", 3);
+}
+
+void	rr(t_stack *a, t_stack *b)
+{
+	if (a->top < 0 || b->top < 0)
+		return ;
+	rotate_up(a);
+	rotate_up(b);
+	write(1, "rr\n", 3);
 }

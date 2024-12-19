@@ -6,7 +6,7 @@
 /*   By: lgirerd <lgirerd@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/19 14:22:59 by lgirerd           #+#    #+#             */
-/*   Updated: 2024/12/19 16:28:08 by lgirerd          ###   ########lyon.fr   */
+/*   Updated: 2024/12/19 17:05:39 by lgirerd          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,5 +31,6 @@ void	pb(t_stack *a, t_stack *b);
 void	pa(t_stack *a, t_stack *b);
 void	sb(t_stack *b);
 void	sa(t_stack *a);
+void	rotate_down(t_stack *stack);
 
 #endif

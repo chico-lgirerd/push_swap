@@ -6,7 +6,7 @@
 #    By: lgirerd <lgirerd@student.42lyon.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/19 16:02:03 by lgirerd           #+#    #+#              #
-#    Updated: 2024/12/19 16:24:40 by lgirerd          ###   ########lyon.fr    #
+#    Updated: 2024/12/19 18:20:00 by lgirerd          ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,10 @@ CFLAGS  = -Wall -Wextra -Werror
 SRCS    = arg_checking.c \
 		  push_swap.c \
 		  stack_utils.c \
-		  stack_ops.c 
+		  stack_reverse.c \
+		  stack_rotate.c \
+		  stack_swap_push.c \
+		  quicksort.c 
 
 OBJS    = $(SRCS:.c=.o)
 

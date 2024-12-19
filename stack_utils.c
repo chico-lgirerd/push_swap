@@ -6,7 +6,7 @@
 /*   By: lgirerd <lgirerd@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/19 14:28:38 by lgirerd           #+#    #+#             */
-/*   Updated: 2024/12/19 20:04:13 by lgirerd          ###   ########lyon.fr   */
+/*   Updated: 2024/12/19 21:17:00 by lgirerd          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,11 +29,5 @@ int	stack_pop(t_stack *stack)
 	popped = stack->array[stack->top];
 	stack->top--;
 	return (popped);
-}
-void swap(int* a, int* b)
-{
-    int temp = *a;
-    *a = *b;
-    *b = temp;
 }
 

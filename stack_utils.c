@@ -6,7 +6,7 @@
 /*   By: lgirerd <lgirerd@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/19 14:28:38 by lgirerd           #+#    #+#             */
-/*   Updated: 2024/12/19 18:08:50 by lgirerd          ###   ########lyon.fr   */
+/*   Updated: 2024/12/19 20:04:13 by lgirerd          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,27 +37,3 @@ void swap(int* a, int* b)
     *b = temp;
 }
 
-int partition(int arr[], int low, int high)
-{
-    int p;
-    int i;
-    int j;
-	
-	p = arr[low];
-	i = low;
-	j = high;
-    while (i < j) 
-	{
-        while (arr[i] <= p && i <= high - 1) {
-            i++;
-        }
-        while (arr[j] > p && j >= low + 1) {
-            j--;
-        }
-        if (i < j) {
-            swap(&arr[i], &arr[j]);
-        }
-    }
-    swap(&arr[low], &arr[j]);
-    return j;
-}

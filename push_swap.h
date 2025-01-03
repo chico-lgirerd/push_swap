@@ -6,7 +6,7 @@
 /*   By: lgirerd <lgirerd@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/19 14:22:59 by lgirerd           #+#    #+#             */
-/*   Updated: 2024/12/19 21:53:16 by lgirerd          ###   ########lyon.fr   */
+/*   Updated: 2025/01/03 15:24:01 by lgirerd          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,4 +36,7 @@ void	rra(t_stack *a);
 void	rrb(t_stack *b);
 void	rotate_down(t_stack *stack);
 void	rotate_up(t_stack *stack);
+void	sort_two(t_stack *a);
+void	sort_three(t_stack *a);
+int		is_sorted(t_stack *stack);
 #endif

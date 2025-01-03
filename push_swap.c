@@ -6,7 +6,7 @@
 /*   By: lgirerd <lgirerd@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/19 14:27:56 by lgirerd           #+#    #+#             */
-/*   Updated: 2024/12/19 21:55:18 by lgirerd          ###   ########lyon.fr   */
+/*   Updated: 2025/01/03 15:24:44 by lgirerd          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ int	main(int argc, char **argv)
     while (i >= 0)
         stack_add(&a, tab[i--]);
     free(tab);
-    push_swap(&a, &b);
+	if (is_sorted(&a) == 0)
+    	sort_three(&a);
     return (0);
 }

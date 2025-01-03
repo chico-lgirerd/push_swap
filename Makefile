@@ -6,7 +6,7 @@
 #    By: lgirerd <lgirerd@student.42lyon.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/19 16:02:03 by lgirerd           #+#    #+#              #
-#    Updated: 2024/12/19 21:41:33 by lgirerd          ###   ########lyon.fr    #
+#    Updated: 2025/01/03 14:33:06 by lgirerd          ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,8 @@ SRCS    = arg_checking.c \
 		  stack_utils.c \
 		  stack_reverse.c \
 		  stack_rotate.c \
-		  stack_swap_push.c 
+		  stack_swap_push.c \
+		  sort_minimals.c 
 
 OBJS    = $(SRCS:.c=.o)
 

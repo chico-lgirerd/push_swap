@@ -6,7 +6,7 @@
 /*   By: lgirerd <lgirerd@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/19 14:28:38 by lgirerd           #+#    #+#             */
-/*   Updated: 2024/12/19 21:17:00 by lgirerd          ###   ########lyon.fr   */
+/*   Updated: 2025/01/03 15:24:49 by lgirerd          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,3 +31,16 @@ int	stack_pop(t_stack *stack)
 	return (popped);
 }
 
+int is_sorted(t_stack *stack)
+{
+	int	i;
+
+	i = stack->top;
+	while (i != 0)
+	{
+		if (stack->array[i] > stack->array[i - 1])
+			return (0);
+		i--;
+	}
+	return (1);
+}
